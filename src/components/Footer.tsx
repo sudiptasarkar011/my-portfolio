@@ -4,23 +4,19 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-32 px-6 lg:px-12 relative overflow-hidden">
-      {/* Magical Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-600/15 via-red-600/15 to-transparent rounded-full blur-3xl siri-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-600/10 via-orange-600/10 to-transparent rounded-full blur-3xl siri-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-16 right-16">
-          <Sparkles className="w-8 h-8 text-orange-400/30 magic-float" />
-        </div>
-        <div className="absolute bottom-16 left-16">
-          <Sparkles className="w-6 h-6 text-red-400/30 magic-float" style={{ animationDelay: '3s' }} />
-        </div>
+    <footer className="bg-gradient-to-br from-black via-orange-900/20 to-red-900/30 text-white py-32 px-6 lg:px-12 relative overflow-hidden">
+      {/* Floating Elements */}
+      <div className="absolute top-16 right-16">
+        <Sparkles className="w-6 h-6 text-orange-400/20 magic-float" />
+      </div>
+      <div className="absolute bottom-16 left-16">
+        <Sparkles className="w-5 h-5 text-red-400/20 magic-float" style={{ animationDelay: '3s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-24 animate-fade-in">
           <h2 className="text-6xl lg:text-7xl font-light mb-10 tracking-tight">
-            Ready to Create Something <span className="font-medium bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent text-glow">Amazing</span>?
+            Ready to Create Something <span className="font-medium bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent glow-text">Amazing</span>?
           </h2>
           <p className="text-xl font-light text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
             Let's collaborate and bring your vision to life with exceptional design 
@@ -39,7 +35,7 @@ const Footer = () => {
         <div className="border-t border-gray-800/50 pt-20">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-12 lg:space-y-0">
             <div className="text-center lg:text-left">
-              <h3 className="text-3xl font-light mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent text-glow">Lora</h3>
+              <h3 className="text-3xl font-light mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent glow-text">Lora</h3>
               <p className="text-gray-400 font-light text-lg">UX Designer & Creative Strategist</p>
             </div>
 
@@ -53,7 +49,7 @@ const Footer = () => {
                 <a 
                   key={index}
                   href={social.href} 
-                  className="group w-14 h-14 glass-card rounded-2xl flex items-center justify-center hover:bg-gradient-to-r hover:from-orange-500/20 hover:to-red-500/20 transition-all duration-500 border border-gray-700/50 hover:border-orange-500/50 shadow-lg hover:shadow-xl hover:shadow-orange-500/20 transform hover:scale-110 hover:-translate-y-2"
+                  className="group w-14 h-14 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl flex items-center justify-center hover:border-orange-500/30 hover:bg-orange-500/10 transition-all duration-500 shadow-lg hover:shadow-xl hover:shadow-orange-500/20 transform hover:scale-110 hover:-translate-y-2"
                 >
                   <social.icon className="w-6 h-6 text-gray-300 group-hover:text-orange-400 transition-all duration-300" />
                 </a>

@@ -39,13 +39,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-32 lg:py-40 px-6 lg:px-12 bg-black relative overflow-hidden">
-      {/* Ambient Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/8 via-orange-500/8 to-transparent rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-      </div>
-      
+    <section className="py-32 lg:py-40 px-6 lg:px-12 bg-gradient-to-br from-black via-orange-900/20 to-red-900/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-24 animate-fade-in">
           <h2 className="text-6xl lg:text-7xl font-light text-white mb-8 tracking-tight">
@@ -61,35 +55,35 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group glass-card glass-card-hover rounded-3xl p-8 transform hover:scale-105 hover:-translate-y-3 transition-all duration-500 animate-fade-in relative overflow-hidden tilt-card"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl p-8 transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 animate-fade-in"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
-                transform: hoveredCard === index ? 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05) translateY(-12px)' : 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateY(0px)'
+                transform: hoveredCard === index ? 'perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02) translateY(-8px)' : 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateY(0px)'
               }}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+              {/* Subtle glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               
               <div className="relative z-10">
-                <div className="mb-8">
-                  <div className="w-16 h-16 glass-card rounded-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500/20 group-hover:to-red-500/20 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-orange-500/25">
-                    <service.icon className={`h-8 w-8 text-gray-300 group-hover:text-orange-400 transition-all duration-500 ${hoveredCard === index ? 'animate-bounce-soft' : ''}`} />
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-all duration-500">
+                    <service.icon className={`h-6 w-6 text-gray-300 group-hover:text-orange-400 transition-all duration-500 ${hoveredCard === index ? 'animate-bounce-soft' : ''}`} />
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-medium text-white mb-4 group-hover:text-orange-400 transition-colors duration-500">
+                <h3 className="text-xl font-medium text-white mb-4 group-hover:text-orange-400 transition-colors duration-500">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-400 font-light leading-relaxed">
+                <p className="text-gray-400 font-light leading-relaxed text-sm">
                   {service.description}
                 </p>
               </div>
               
-              {/* Magical border glow */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none glow-border-card"></div>
+              {/* Subtle border glow */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none border border-orange-500/20"></div>
             </div>
           ))}
         </div>
