@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="text-white py-20 px-6 lg:px-12 relative">
+    <footer className="text-foreground py-20 px-6 lg:px-12 relative">
       {/* Cute robot element */}
       <div className="absolute top-10 left-1/2 transform -translate-x-1/2 opacity-10">
         <Bot className="w-8 h-8 text-pink-400 animate-pulse" />
@@ -12,10 +12,10 @@ const Footer = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-white mb-6">
+          <h2 className="text-4xl font-light text-foreground mb-6">
             Let's Work Together
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Interested in collaborating on data science projects or AI/ML solutions? 
             I'd love to discuss how we can turn your data into actionable insights.
           </p>
@@ -28,11 +28,11 @@ const Footer = () => {
           </Button>
         </div>
 
-        <div className="border-t border-pink-800/30 pt-12">
+        <div className="border-t border-border pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-light mb-2 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Lora</h3>
-              <p className="text-gray-300">Data Scientist & AI/ML Engineer</p>
+              <p className="text-muted-foreground">Data Scientist & AI/ML Engineer</p>
             </div>
 
             <div className="flex space-x-4">
@@ -46,16 +46,16 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-12 h-12 rounded-lg border border-pink-600/30 bg-gradient-to-br from-pink-800/20 to-purple-800/20 flex items-center justify-center hover:border-pink-400 hover:bg-gradient-to-br hover:from-pink-700/30 hover:to-purple-700/30 transition-all duration-300 shadow-lg hover:shadow-pink-500/20"
+                  className="w-12 h-12 rounded-lg border border-pink-200 dark:border-pink-600/30 bg-pink-100/50 dark:bg-gradient-to-br dark:from-pink-800/20 dark:to-purple-800/20 flex items-center justify-center hover:border-pink-400 hover:bg-pink-200/50 dark:hover:bg-gradient-to-br dark:hover:from-pink-700/30 dark:hover:to-purple-700/30 transition-all duration-300 shadow-lg hover:shadow-pink-500/20"
                 >
-                  <social.icon className="w-5 h-5 text-gray-300 hover:text-pink-300 transition-colors" />
+                  <social.icon className="w-5 h-5 text-gray-500 dark:text-gray-300 hover:text-pink-400 dark:hover:text-pink-300 transition-colors" />
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="text-center mt-12 pt-8 border-t border-pink-800/30">
-            <p className="text-gray-400">
+          <div className="text-center mt-12 pt-8 border-t border-border">
+            <p className="text-muted-foreground">
               © 2024 Lora. Building the future with data and AI.
             </p>
           </div>

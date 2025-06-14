@@ -57,10 +57,10 @@ const Services = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-white mb-4">
+          <h2 className="text-4xl font-light text-foreground mb-4">
             What I Do
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Specializing in data science and AI/ML engineering to help businesses 
             make data-driven decisions and build intelligent systems.
           </p>
@@ -70,7 +70,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group p-6 bg-gradient-to-br from-pink-900/10 to-purple-900/10 backdrop-blur-sm border border-pink-500/20 rounded-xl hover:border-pink-400/50 hover:bg-gradient-to-br hover:from-pink-800/20 hover:to-purple-800/20 transition-all duration-300 shadow-lg hover:shadow-pink-500/10"
+              className="group p-6 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-pink-900/10 dark:to-purple-900/10 backdrop-blur-sm border border-pink-100 dark:border-pink-500/20 rounded-xl hover:border-pink-300 dark:hover:border-pink-400/50 hover:bg-gradient-to-br hover:from-purple-100/50 hover:to-pink-100/50 dark:hover:from-pink-800/20 dark:hover:to-purple-800/20 transition-all duration-300 shadow-lg hover:shadow-pink-500/10"
             >
               <div className="mb-4">
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} p-2 group-hover:scale-110 transition-transform duration-300`}>
@@ -78,11 +78,11 @@ const Services = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-medium text-white mb-3 group-hover:text-pink-200 transition-colors">
+              <h3 className="text-xl font-medium text-foreground mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-200 transition-colors">
                 {service.title}
               </h3>
               
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </div>
