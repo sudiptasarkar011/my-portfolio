@@ -7,7 +7,7 @@ import ThemeToggle from "../components/ThemeToggle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-orange-900/20 to-red-900/30 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <ThemeToggle />
       <Hero />
       <Services />
