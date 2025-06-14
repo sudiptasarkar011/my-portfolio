@@ -27,7 +27,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-32 lg:py-40 px-6 lg:px-12 bg-gradient-to-br from-black via-orange-900/20 to-red-900/30 relative overflow-hidden">
+    <section className="py-32 lg:py-40 px-6 lg:px-12 relative overflow-hidden">
       {/* Floating Magical Elements */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
         <Sparkles className="absolute top-20 left-20 w-6 h-6 text-orange-400/30 magic-float" />
@@ -63,11 +63,11 @@ const Experience = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-8">
-              <div className="text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl group hover:border-orange-500/30 transition-all duration-500">
+              <div className="text-center p-8 rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-white/0 backdrop-blur-xl group hover:border-orange-500/20 transition-all duration-500">
                 <div className="text-4xl font-light bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300 glow-text">50+</div>
                 <div className="text-gray-400 font-light">Projects Completed</div>
               </div>
-              <div className="text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl group hover:border-orange-500/30 transition-all duration-500">
+              <div className="text-center p-8 rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-white/0 backdrop-blur-xl group hover:border-orange-500/20 transition-all duration-500">
                 <div className="text-4xl font-light bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300 glow-text">25+</div>
                 <div className="text-gray-400 font-light">Happy Clients</div>
               </div>
@@ -75,13 +75,13 @@ const Experience = () => {
           </div>
 
           <div className="animate-fade-in">
-            <div className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl p-1 hover:border-orange-500/30 transition-all duration-700">
+            <div className="group relative rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-white/0 backdrop-blur-xl p-1 hover:border-orange-500/20 transition-all duration-700">
               <img 
                 src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80" 
                 alt="Designer at work" 
                 className="w-full h-96 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-1 bg-gradient-to-t from-orange-500/10 via-transparent to-red-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-1 bg-gradient-to-t from-orange-500/5 via-transparent to-red-500/[0.02] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ const Experience = () => {
             {projects.map((project, index) => (
               <div 
                 key={index}
-                className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl overflow-hidden transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-700 animate-fade-in"
+                className="group rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-white/0 backdrop-blur-xl overflow-hidden transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-700 animate-fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
@@ -105,7 +105,7 @@ const Experience = () => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-orange-500/20 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-orange-500/10 transition-all duration-500"></div>
                   <div className="absolute top-4 right-4">
                     <ExternalLink className="w-5 h-5 text-white/70 group-hover:text-orange-400 transition-colors duration-300 group-hover:scale-110" />
                   </div>
@@ -113,7 +113,7 @@ const Experience = () => {
                 
                 <div className="p-8 relative">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent font-medium px-3 py-1 rounded-full border border-orange-500/20 bg-orange-500/10">{project.year}</span>
+                    <span className="text-sm bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent font-medium px-3 py-1 rounded-full border border-orange-500/20 bg-orange-500/5">{project.year}</span>
                   </div>
                   <h4 className="text-2xl font-medium text-white mb-3 group-hover:text-orange-400 transition-colors duration-300">
                     {project.title}

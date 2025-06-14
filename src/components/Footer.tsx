@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-black via-orange-900/20 to-red-900/30 text-white py-32 px-6 lg:px-12 relative overflow-hidden">
+    <footer className="text-white py-32 px-6 lg:px-12 relative overflow-hidden">
       {/* Floating Elements */}
       <div className="absolute top-16 right-16">
         <Sparkles className="w-6 h-6 text-orange-400/20 magic-float" />

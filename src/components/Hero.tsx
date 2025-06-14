@@ -18,10 +18,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 py-20 bg-black overflow-hidden">
-      {/* Consistent Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-orange-900/20 to-red-900/30"></div>
-      
+    <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 py-20 overflow-hidden">
       {/* Floating Magical Elements */}
       <div className="absolute top-20 left-20 magic-float text-orange-400/40">
         <Sparkles className="w-6 h-6" />
