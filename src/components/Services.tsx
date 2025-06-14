@@ -36,42 +36,58 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900/50 dark:to-gray-900 relative overflow-hidden">
-      {/* Magical Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/20 via-transparent to-purple-50/20 dark:from-blue-950/20 dark:via-transparent dark:to-purple-950/20"></div>
+    <section className="py-32 lg:py-40 px-6 lg:px-12 bg-black relative overflow-hidden">
+      {/* Ambient Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-transparent rounded-full blur-3xl siri-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/8 via-orange-500/8 to-transparent rounded-full blur-3xl siri-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
       
-      <div className="max-w-6xl mx-auto relative">
-        <div className="text-center mb-20 animate-fade-in">
-          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 dark:text-white mb-6 tracking-tight">
-            Explore My <span className="font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Offerings</span> for You
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-center mb-24 animate-fade-in">
+          <h2 className="text-6xl lg:text-7xl font-light text-white mb-8 tracking-tight">
+            Explore My <span className="font-medium bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent text-glow">Offerings</span> for You
           </h2>
-          <p className="text-xl font-light text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl font-light text-gray-300 max-w-3xl mx-auto leading-relaxed">
             From concept to completion, I provide comprehensive design services 
             that transform your vision into exceptional digital experiences.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-2xl p-8 border border-gray-100/50 dark:border-gray-700/50 hover:border-gray-200/50 dark:hover:border-gray-600/50 hover:shadow-2xl transition-all duration-500 animate-fade-in transform hover:scale-105 hover:-translate-y-2"
+              className="group glass-card glass-card-hover rounded-3xl p-8 transform hover:scale-105 hover:-translate-y-3 transition-all duration-500 animate-fade-in relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-gray-100/80 to-gray-200/80 dark:from-gray-700/80 dark:to-gray-800/80 rounded-xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-blue-50/80 group-hover:to-purple-50/80 dark:group-hover:from-blue-900/50 dark:group-hover:to-purple-900/50 transition-all duration-500 backdrop-blur-sm">
-                  <service.icon className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-500 group-hover:scale-110" />
-                </div>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed text-sm">
-                {service.description}
-              </p>
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
               
-              {/* Hover Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="relative z-10">
+                <div className="mb-8">
+                  <div className="w-16 h-16 glass-card rounded-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500/20 group-hover:to-red-500/20 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-orange-500/25">
+                    <service.icon className="h-8 w-8 text-gray-300 group-hover:text-orange-400 transition-all duration-500 group-hover:scale-110" />
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-medium text-white mb-4 group-hover:text-orange-400 transition-colors duration-500">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-400 font-light leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+              
+              {/* Magical border glow */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
+                   style={{ 
+                     background: 'linear-gradient(45deg, transparent, rgba(255, 87, 34, 0.3), transparent)',
+                     padding: '1px',
+                     backgroundClip: 'border-box'
+                   }}>
+              </div>
             </div>
           ))}
         </div>
