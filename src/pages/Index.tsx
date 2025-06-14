@@ -2,6 +2,7 @@
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Experience from "../components/Experience";
+import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import ThemeToggle from "../components/ThemeToggle";
 
@@ -12,6 +13,7 @@ const Index = () => {
       <Hero />
       <Services />
       <Experience />
+      <Projects />
       <Footer />
     </div>
   );
