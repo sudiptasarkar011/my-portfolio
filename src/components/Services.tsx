@@ -36,34 +36,34 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 px-6 lg:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Explore My <span className="text-blue-600">Offerings</span> for You
+    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+            Explore My <span className="font-medium text-blue-600">Offerings</span> for You
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
             From concept to completion, I provide comprehensive design services 
             that transform your vision into exceptional digital experiences.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group bg-gray-50 rounded-3xl p-8 hover:bg-white hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in border border-gray-100"
+              className="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="mb-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
-                  <service.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-blue-50 transition-colors duration-300">
+                  <service.icon className="h-6 w-6 text-gray-700 group-hover:text-blue-600 transition-colors duration-300" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+              <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 font-light leading-relaxed text-sm">
                 {service.description}
               </p>
             </div>

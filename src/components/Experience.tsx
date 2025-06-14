@@ -27,44 +27,43 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 px-6 lg:px-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Experiences with <span className="text-blue-600">Passion</span>,
-            <span className="block">Precision, and Purpose</span>
+    <section className="py-24 lg:py-32 px-6 lg:px-12 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+            Experiences with <span className="font-medium text-blue-600">Passion</span>,
+            <span className="block font-light">Precision, and Purpose</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Every project is a journey of discovery, creativity, and meticulous attention 
             to detail, resulting in designs that truly resonate with users.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
                 <Calendar className="w-4 h-4 mr-2" />
                 5+ Years Experience
               </div>
-              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">
+              <h3 className="text-4xl lg:text-5xl font-light text-gray-900 tracking-tight">
                 Crafting Digital Experiences That Matter
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg font-light text-gray-600 leading-relaxed">
                 My approach combines user-centered design principles with business objectives, 
-                ensuring every design decision is both beautiful and purposeful. I believe in 
-                the power of collaboration and iterative design to create solutions that exceed expectations.
+                ensuring every design decision is both beautiful and purposeful.
               </p>
             </div>
             
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-                <div className="text-gray-600">Projects Completed</div>
+              <div className="text-center p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <div className="text-3xl font-light text-blue-600 mb-2">50+</div>
+                <div className="text-gray-600 font-light text-sm">Projects Completed</div>
               </div>
-              <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">25+</div>
-                <div className="text-gray-600">Happy Clients</div>
+              <div className="text-center p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <div className="text-3xl font-light text-blue-600 mb-2">25+</div>
+                <div className="text-gray-600 font-light text-sm">Happy Clients</div>
               </div>
             </div>
           </div>
@@ -73,14 +72,14 @@ const Experience = () => {
             <img 
               src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80" 
               alt="Designer at work" 
-              className="w-full h-96 object-cover rounded-3xl shadow-2xl"
+              className="w-full h-96 object-cover rounded-3xl border border-gray-100"
             />
           </div>
         </div>
 
         {/* Case Studies */}
-        <div className="space-y-6">
-          <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
+        <div className="space-y-12">
+          <h3 className="text-4xl lg:text-5xl font-light text-gray-900 text-center tracking-tight">
             Featured Case Studies
           </h3>
           
@@ -88,14 +87,14 @@ const Experience = () => {
             {projects.map((project, index) => (
               <div 
                 key={index}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden bg-gray-50">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
@@ -103,13 +102,13 @@ const Experience = () => {
                     <span className="text-sm text-blue-600 font-medium">{project.year}</span>
                     <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-300" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  <h4 className="text-xl font-medium text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-600 font-light mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex items-center text-gray-500 text-sm">
+                  <div className="flex items-center text-gray-500 text-sm font-light">
                     <MapPin className="w-4 h-4 mr-1" />
                     {project.location}
                   </div>
