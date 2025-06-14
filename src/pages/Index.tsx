@@ -3,10 +3,12 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Experience from "../components/Experience";
 import Footer from "../components/Footer";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <ThemeToggle />
       <Hero />
       <Services />
       <Experience />
