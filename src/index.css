@@ -97,42 +97,62 @@
   }
 }
 
-/* Magical gradient animations */
-@keyframes lavaFlow {
+/* Enhanced Animation Keyframes */
+@keyframes shimmer {
   0% {
-    transform: translateX(-100%) translateY(-50%) rotate(0deg);
-  }
-  50% {
-    transform: translateX(100%) translateY(-30%) rotate(180deg);
+    background-position: -200% 0;
   }
   100% {
-    transform: translateX(-100%) translateY(-50%) rotate(360deg);
+    background-position: 200% 0;
   }
 }
 
-@keyframes cosmicWave {
-  0%, 100% {
-    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1);
-    opacity: 0.6;
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
   }
-  33% {
-    transform: translateX(-40%) translateY(-60%) rotate(120deg) scale(1.2);
-    opacity: 0.8;
-  }
-  66% {
-    transform: translateX(-60%) translateY(-40%) rotate(240deg) scale(0.9);
-    opacity: 0.7;
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@keyframes siriPulse {
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-slow {
   0%, 100% {
+    opacity: 0.4;
     transform: scale(1);
-    opacity: 0.7;
   }
   50% {
-    transform: scale(1.1);
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
     opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
@@ -157,38 +177,38 @@
   }
 }
 
-@keyframes textGlow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
-  }
-}
-
 /* Utility classes */
 @layer utilities {
-  .bg-lava-gradient {
-    background: linear-gradient(135deg, #000000 0%, #1a0d00 25%, #ff5722 50%, #f4511e 75%, #000000 100%);
-    background-size: 400% 400%;
-    animation: lavaFlow 20s ease-in-out infinite;
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
   
-  .bg-cosmic-gradient {
-    background: radial-gradient(circle at 50% 50%, rgba(255, 87, 34, 0.4) 0%, rgba(244, 81, 30, 0.2) 40%, transparent 70%);
-    animation: cosmicWave 15s linear infinite;
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
   }
   
-  .text-glow {
-    animation: textGlow 3s ease-in-out infinite;
+  .animate-spin-reverse {
+    animation: spin-reverse 15s linear infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+  
+  .animate-bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
   }
   
   .magic-float {
     animation: floatMagic 6s ease-in-out infinite;
-  }
-  
-  .siri-pulse {
-    animation: siriPulse 2s ease-in-out infinite;
   }
   
   .glow-orange {
@@ -211,6 +231,56 @@
     border: 1px solid rgba(255, 87, 34, 0.3);
     transform: translateY(-5px);
     box-shadow: 0 12px 48px rgba(255, 87, 34, 0.2);
+  }
+
+  .tilt-card {
+    transition: transform 0.3s ease-out;
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(255, 87, 34, 0.5), 0 0 20px rgba(255, 87, 34, 0.3);
+  }
+
+  .glow-border-card {
+    background: linear-gradient(45deg, transparent, rgba(255, 87, 34, 0.3), transparent);
+    padding: 1px;
+    background-clip: border-box;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 30px rgba(255, 87, 34, 0.4), 0 0 60px rgba(244, 81, 30, 0.3);
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .animate-spin-slow,
+    .animate-spin-reverse {
+      animation-duration: 30s;
+    }
+    
+    .tilt-card:hover {
+      transform: none !important;
+    }
+    
+    .animate-shimmer {
+      animation-duration: 4s;
+    }
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-shimmer,
+    .animate-spin-slow,
+    .animate-spin-reverse,
+    .animate-pulse-slow,
+    .animate-bounce-soft,
+    .magic-float {
+      animation: none;
+    }
+    
+    .tilt-card:hover {
+      transform: translateY(-3px) !important;
+    }
   }
 }
 

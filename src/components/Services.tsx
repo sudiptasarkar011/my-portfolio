@@ -1,7 +1,10 @@
 
 import { Palette, Smartphone, Layout, Figma, Monitor, Tablet } from "lucide-react";
+import { useState } from "react";
 
 const Services = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   const services = [
     {
       icon: Palette,
@@ -39,14 +42,14 @@ const Services = () => {
     <section className="py-32 lg:py-40 px-6 lg:px-12 bg-black relative overflow-hidden">
       {/* Ambient Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-transparent rounded-full blur-3xl siri-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/8 via-orange-500/8 to-transparent rounded-full blur-3xl siri-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/8 via-orange-500/8 to-transparent rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-24 animate-fade-in">
           <h2 className="text-6xl lg:text-7xl font-light text-white mb-8 tracking-tight">
-            Explore My <span className="font-medium bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent text-glow">Offerings</span> for You
+            Explore My <span className="font-medium bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent animate-shimmer">Offerings</span> for You
           </h2>
           <p className="text-xl font-light text-gray-300 max-w-3xl mx-auto leading-relaxed">
             From concept to completion, I provide comprehensive design services 
@@ -58,8 +61,13 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group glass-card glass-card-hover rounded-3xl p-8 transform hover:scale-105 hover:-translate-y-3 transition-all duration-500 animate-fade-in relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group glass-card glass-card-hover rounded-3xl p-8 transform hover:scale-105 hover:-translate-y-3 transition-all duration-500 animate-fade-in relative overflow-hidden tilt-card"
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                transform: hoveredCard === index ? 'perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05) translateY(-12px)' : 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateY(0px)'
+              }}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Glow effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
@@ -67,7 +75,7 @@ const Services = () => {
               <div className="relative z-10">
                 <div className="mb-8">
                   <div className="w-16 h-16 glass-card rounded-2xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-orange-500/20 group-hover:to-red-500/20 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-orange-500/25">
-                    <service.icon className="h-8 w-8 text-gray-300 group-hover:text-orange-400 transition-all duration-500 group-hover:scale-110" />
+                    <service.icon className={`h-8 w-8 text-gray-300 group-hover:text-orange-400 transition-all duration-500 ${hoveredCard === index ? 'animate-bounce-soft' : ''}`} />
                   </div>
                 </div>
                 
@@ -81,13 +89,7 @@ const Services = () => {
               </div>
               
               {/* Magical border glow */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
-                   style={{ 
-                     background: 'linear-gradient(45deg, transparent, rgba(255, 87, 34, 0.3), transparent)',
-                     padding: '1px',
-                     backgroundClip: 'border-box'
-                   }}>
-              </div>
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none glow-border-card"></div>
             </div>
           ))}
         </div>
