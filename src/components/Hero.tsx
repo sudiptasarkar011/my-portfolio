@@ -106,14 +106,14 @@ const Hero = () => {
         {/* Left Content */}
         <div className="space-y-8 animate-fade-in">
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-light text-white leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-light text-foreground leading-tight">
               Hi, I'm <span className="font-medium bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent data-shimmer">Lora</span>
             </h1>
             <div className="space-y-2">
-              <p className="text-2xl text-pink-200 font-light typewriter-effect">Data Scientist</p>
-              <p className="text-2xl text-purple-200 font-light typewriter-effect" style={{ animationDelay: '1s' }}>& AI/ML Engineer</p>
+              <p className="text-2xl text-pink-200 dark:text-pink-200 font-light typewriter-effect">Data Scientist</p>
+              <p className="text-2xl text-purple-200 dark:text-purple-200 font-light typewriter-effect" style={{ animationDelay: '1s' }}>& AI/ML Engineer</p>
             </div>
-            <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
               Transforming complex data into actionable insights through machine learning, 
               statistical analysis, and intelligent system design.
             </p>
@@ -130,7 +130,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-pink-400 text-pink-300 hover:bg-pink-500/10 hover:border-pink-300 px-8 py-3 text-base font-medium rounded-lg transition-all duration-300 data-border"
+              className="border-pink-400 text-pink-600 dark:text-pink-300 hover:bg-pink-500/10 hover:border-pink-300 px-8 py-3 text-base font-medium rounded-lg transition-all duration-300 data-border"
             >
               Download CV
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -142,7 +142,7 @@ const Hero = () => {
         <div className="relative animate-fade-in">
           <div className="bg-gradient-to-br from-pink-900/20 to-purple-900/20 backdrop-blur-sm border border-pink-500/20 rounded-2xl p-8 shadow-xl data-card">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-white font-medium flex items-center">
+              <h3 className="text-foreground font-medium flex items-center">
                 <Bot className="w-5 h-5 text-pink-400 mr-2 neural-pulse" />
                 AI Insights
               </h3>
@@ -186,15 +186,15 @@ const Hero = () => {
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-pink-700/30">
                 <div className="text-center neural-stat">
                   <div className="text-2xl font-bold text-pink-400 counter-effect">50+</div>
-                  <div className="text-sm text-gray-400">ML Models</div>
+                  <div className="text-sm text-muted-foreground">ML Models</div>
                 </div>
                 <div className="text-center neural-stat" style={{ animationDelay: '0.5s' }}>
                   <div className="text-2xl font-bold text-purple-400 counter-effect">1M+</div>
-                  <div className="text-sm text-gray-400">Data Points</div>
+                  <div className="text-sm text-muted-foreground">Data Points</div>
                 </div>
                 <div className="text-center neural-stat" style={{ animationDelay: '1s' }}>
                   <div className="text-2xl font-bold text-pink-300 counter-effect">95%</div>
-                  <div className="text-sm text-gray-400">Accuracy</div>
+                  <div className="text-sm text-muted-foreground">Accuracy</div>
                 </div>
               </div>
             </div>
