@@ -1,4 +1,3 @@
-
 import { Database, Brain, TrendingUp, Code, BarChart3, Cpu, Bot } from "lucide-react";
 
 const Services = () => {
@@ -132,10 +131,8 @@ const Services = () => {
                 </div>
               </div>
               
-              <h3 className="text-xl font-medium text-foreground mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-200 transition-colors relative">
+              <h3 className="text-xl font-medium text-foreground mb-3 group-hover:text-pink-600 dark:group-hover:text-pink-200 transition-all duration-300 relative">
                 {service.title}
-                {/* Underline effect */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 group-hover:w-full transition-all duration-300"></div>
               </h3>
               
               <p className="text-muted-foreground leading-relaxed">
